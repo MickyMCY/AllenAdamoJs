@@ -3,63 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudo - Simulador de Apostas</title>
+    <title>ApostaPro - Simulador Profissional</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
-        <div class="logo">ApostaEstudo</div>
+        <div class="logo">ApostaPro</div>
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Apostas</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="#" class="nav-link">Início</a></li>
+                <li><a href="#" class="nav-link">Apostas</a></li>
+                <li><a href="#" class="nav-link">Promoções</a></li>
+                <li><a href="#" class="nav-link">Suporte</a></li>
             </ul>
         </nav>
+        <div class="theme-toggle">
+            <button id="theme-switch" aria-label="Alternar tema">🌙</button>
+        </div>
     </header>
 
     <main>
-        <section class="login-section">
-            <h2>Faça Login</h2>
-            <form id="login-form">
+        <section class="hero-section">
+            <h1>Bem-vindo ao ApostaPro</h1>
+            <p>Experimente a emoção das apostas com segurança e estilo!</p>
+            <button class="cta-button" onclick="scrollToLogin()">Comece Agora</button>
+        </section>
+
+        <section class="login-section" id="login-section">
+            <h2>Entrar na Sua Conta</h2>
+            <form id="login-form" aria-label="Formulário de login">
                 <div class="form-group">
                     <label for="username">Usuário:</label>
-                    <input type="text" id="username" placeholder="Digite seu usuário" required>
+                    <input type="text" id="username" placeholder="Digite seu usuário" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>
-                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                    <input type="password" id="password" placeholder="Digite sua senha" required aria-required="true">
                 </div>
-                <button type="submit">Entrar</button>
-                <p id="error-message" class="error"></p>
+                <button type="submit" class="submit-button">Entrar</button>
+                <p id="error-message" class="error" role="alert"></p>
             </form>
         </section>
 
         <section class="bets-section">
-            <h2>Apostas Disponíveis</h2>
-            <div class="bets-container">
+            <h2>Apostas em Destaque</h2>
+            <div class="bets-grid">
                 <div class="bet-card" data-id="1">
-                    <h3>Jogo: Time A vs Time B</h3>
-                    <p>Odds: 1.85 (Vitória Time A)</p>
-                    <button class="bet-button">Apostar</button>
+                    <span class="badge">Novo</span>
+                    <h3>Jogo: Flamengo vs Corinthians</h3>
+                    <p>Odds: <span class="odds-value">1.95</span> (Vitória Flamengo)</p>
+                    <button class="bet-button" aria-label="Apostar em Flamengo">Apostar</button>
                 </div>
                 <div class="bet-card" data-id="2">
-                    <h3>Jogo: Time C vs Time D</h3>
-                    <p>Odds: 2.10 (Vitória Time C)</p>
-                    <button class="bet-button">Apostar</button>
+                    <span class="badge">Popular</span>
+                    <h3>Jogo: Palmeiras vs São Paulo</h3>
+                    <p>Odds: <span class="odds-value">2.30</span> (Vitória Palmeiras)</p>
+                    <button class="bet-button" aria-label="Apostar em Palmeiras">Apostar</button>
+                </div>
+                <div class="bet-card" data-id="3">
+                    <span class="badge">Ao Vivo</span>
+                    <h3>Jogo: Real Madrid vs Barcelona</h3>
+                    <p>Odds: <span class="odds-value">1.75</span> (Vitória Real Madrid)</p>
+                    <button class="bet-button" aria-label="Apostar em Real Madrid">Apostar</button>
                 </div>
             </div>
-            <div id="bet-selection">
-                <h3>Suas Apostas</h3>
+            <div class="bet-cart">
+                <h3>Suas Apostas (<span id="bet-count">0</span>)</h3>
                 <ul id="selected-bets"></ul>
             </div>
         </section>
     </main>
 
+    <div id="bet-modal" class="modal" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <h3 id="modal-title">Confirmar Aposta</h3>
+            <p id="modal-text"></p>
+            <div class="modal-buttons">
+                <button id="confirm-bet">Confirmar</button>
+                <button id="cancel-bet">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="alert"></div>
+
     <footer>
-        <p>©️ 2025 ApostaEstudo - Projeto Educacional</p>
+        <p>© 2025 ApostaPro - Projeto Educacional | Desenvolvido para Estudo</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
