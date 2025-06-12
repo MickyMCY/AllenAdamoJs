@@ -2,140 +2,123 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: #1a1a1a;
+    background: linear-gradient(135deg, #0a0a0a, #1c2526);
     color: #fff;
     line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.3s;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
 }
 
 header {
-    background-color: #004d40;
-    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 77, 64, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #00ff88;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-nav a {
+.nav-link {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #00ff88;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #00ff88;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem;
 }
 
-.login-section, .bets-section {
-    background-color: #263238;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-}
-
-h2 {
-    margin-bottom: 1rem;
-    color: #26a69a;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-input {
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #37474f;
-    color: #fff;
-}
-
-button {
-    background-color: #26a69a;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #00897b;
-}
-
-.error {
-    color: #ef5350;
-    margin-top: 0.5rem;
-}
-
-.bets-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.bet-card {
-    background-color: #37474f;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 300px;
-}
-
-.bet-button {
-    width: 100%;
-    margin-top: 0.5rem;
-}
-
-#bet-selection {
-    margin-top: 2rem;
-}
-
-footer {
+.hero-section {
     text-align: center;
-    padding: 1rem;
-    background-color: #004d40;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 4rem 0;
+    animation: fadeIn 1s ease-out;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .bets-container {
-        flex-direction: column;
-    }
-    .bet-card {
-        max-width: 100%;
-    }
+.hero-section h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #00ff88;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #b0bec5;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff6200, #ff8c00);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5...
+
+Algo deu errado. Atualize para reconectar ou tente novamente.
